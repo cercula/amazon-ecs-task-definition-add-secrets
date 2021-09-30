@@ -1,5 +1,4 @@
 const core = require("@actions/core")
-const github = require("@actions/github")
 const path = require("path")
 const fs = require("fs")
 
@@ -26,7 +25,8 @@ try {
   const secretsContents = require(secretsPath)
 
   taskDefinitionContents.containerDefinitions[0].secrets = secretsContents
-  console.log(taskDefinitionContents)
+
+  fs.writeFileSync(taskDefinitionPath, JSON.stringify(taskDefinitionContents))
 } catch (error) {
   core.setFailed(error.message)
 }
