@@ -25,7 +25,8 @@ try {
   const taskDefinitionContents = require(taskDefinitionPath)
   const secretsContents = require(secretsPath)
 
-  console.log(taskDefinitionContents, secretsContents)
+  taskDefinitionContents.containerDefinitions[0].secrets = secretsContents
+  console.log(taskDefinitionContents)
 } catch (error) {
   core.setFailed(error.message)
 }
