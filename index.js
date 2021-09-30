@@ -28,7 +28,7 @@ try {
 
   fs.writeFileSync(
     taskDefinitionPath,
-    JSON.stringify(taskDefinitionContents, null, "\t")
+    JSON.stringify(taskDefinitionContents, null, 4)
   )
 } catch (error) {
   core.setFailed(error.message)
