@@ -26,7 +26,10 @@ try {
 
   taskDefinitionContents.containerDefinitions[0].secrets = secretsContents
 
-  fs.writeFileSync(taskDefinitionPath, JSON.stringify(taskDefinitionContents))
+  fs.writeFileSync(
+    taskDefinitionPath,
+    JSON.stringify(taskDefinitionContents, null, 2)
+  )
 } catch (error) {
   core.setFailed(error.message)
 }
