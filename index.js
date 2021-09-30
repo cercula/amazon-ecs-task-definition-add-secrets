@@ -2,6 +2,7 @@ const core = require("@actions/core")
 const github = require("@actions/github")
 
 try {
+  console.log("Adding secrets...")
   const taskDefinition = core.getInput("task-definition")
   const secrets = core.getInput("secrets")
 
