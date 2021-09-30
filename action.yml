@@ -1,0 +1,12 @@
+name: "AWS Fargate Task Secrets"
+description: "Add a secrets file to you task definition"
+inputs:
+  task-definition:
+    description: "Path to task definition file"
+    required: true
+  secrets:
+    description: "Path to secrets json file"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
